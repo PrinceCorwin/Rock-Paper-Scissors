@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Rock, Paper, Scissors</title>
+    <title>Rock, Paper, Scissors: Judgement Day</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,7 +16,48 @@
   <body>
     <!-- add nav bar here -->
     <main>
-      <script></script>
+      <div class="container">
+        <div class="header">
+          <div class="title">
+            <img
+              class="header-img"
+              src="./images/termvsSarah.jpg"
+              alt="terminator image"
+            />
+            <h4>ROCK, PAPER, SCISSORS:</h4>
+            <h2>JUDGEMENT DAY!</h2>
+            <p>
+              After millenia of temporal bickering, Sarah and the Terminators
+              have agreed that this is going nowhere (nowhen?). A bargain has
+              been struck. The final outcome of their epic contest will rest
+              that most ancient and noble form of combat... ROCK, PAPER,
+              SCISSORS! You have been chosen to represent humanity in this final
+              battle. Choose wisely... <br />Our fate is in your hands
+              (literally).
+            </p>
+          </div>
+        </div>
+
+        <div class="rps">
+          <div id="rock" class="rock"><img src="" alt="rock" /></div>
+          <div id="paper" class="paper"><img src="" alt="rock" /></div>
+          <div id="scissors" class="scissors">
+            <img src="" alt="rock" />
+          </div>
+        </div>
+        <div class="choices">
+          <div class="round">ROUND:</div>
+          <div class="player-choice">Resistance Chooses:</div>
+          <div class="term-choice">Terminator Chooses</div>
+        </div>
+        <div class="winner">The Resistance Wins!</div>
+        <ul class="score" id="score">
+          <li>SCORE</li>
+          <li>Resistance:</li>
+          <li>Terminator:</li>
+        </ul>
+        <div class="victor">Best of 5: Make Another Selection</div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>

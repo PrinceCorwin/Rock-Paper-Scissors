@@ -4,8 +4,8 @@ function round() {
   let cscore = 0;
   for (let i = 1; i < 6; i++) {
     console.log("Round: " + round);
-    const userInput = prompt(
-      `enter "rock", "paper", or "scissors"`
+    // const userInput = prompt(
+    //   `enter "rock", "paper", or "scissors"`
     ).toLowerCase();
     let compInput = Math.floor(Math.random() * 3);
     switch (compInput) {
