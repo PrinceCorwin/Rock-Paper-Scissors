@@ -11,7 +11,19 @@
     ></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <!-- add link to fonts here -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- add nav bar here -->
@@ -24,13 +36,13 @@
               src="./images/termvsSarah.jpg"
               alt="terminator image"
             />
-            <h4>ROCK, PAPER, SCISSORS:</h4>
-            <h2>JUDGEMENT DAY!</h2>
+            <h2>ROCK, PAPER, SCISSORS:</h2>
+            <h1>JUDGEMENT DAY!</h1>
             <p>
               After millenia of temporal bickering, Sarah and the Terminators
               have agreed that this is going nowhere (nowhen?). A bargain has
               been struck. The final outcome of their epic contest will rest
-              that most ancient and noble form of combat... ROCK, PAPER,
+              upon that most ancient and noble form of combat... ROCK, PAPER,
               SCISSORS! You have been chosen to represent humanity in this final
               battle. Choose wisely... <br />Our fate is in your hands
               (literally).
@@ -39,24 +51,27 @@
         </div>
 
         <div class="rps">
-          <div id="rock" class="rock"><img src="" alt="rock" /></div>
-          <div id="paper" class="paper"><img src="" alt="rock" /></div>
-          <div id="scissors" class="scissors">
-            <img src="" alt="rock" />
+          <div id="rock" class="rock btn">
+            <img src="./images/rock.png" alt="rock" />
+          </div>
+          <div id="paper" class="paper btn">
+            <img src="./images/paper.png" alt="paper" />
+          </div>
+          <div id="scissors" class="scissors btn">
+            <img src="./images/scissors.png" alt="scissors" />
           </div>
         </div>
         <div class="choices">
-          <div class="round">ROUND:</div>
           <div class="player-choice">Resistance Chooses:</div>
           <div class="term-choice">Terminator Chooses</div>
         </div>
-        <div class="winner">The Resistance Wins!</div>
+        <div class="winner" id="winner"></div>
         <ul class="score" id="score">
           <li>SCORE</li>
-          <li>Resistance:</li>
-          <li>Terminator:</li>
+          <li id="pscore">Resistance: 0</li>
+          <li id="cscore">Terminator: 0</li>
         </ul>
-        <div class="victor">Best of 5: Make Another Selection</div>
+        <div class="victor" id="victor">First to 5: Make Another Selection</div>
       </div>
     </main>
     <script src="script.js"></script>

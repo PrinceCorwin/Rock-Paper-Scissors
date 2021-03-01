@@ -5,8 +5,9 @@
   --clr-darktone: ;
   --clr-contrast1: ;
   --clr-contrast2: ;
-  --ff-primary: ;
-  --ff-accent: ;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-accent: "DotGothic16", sans-serif;
+  --ff-accent2: "Rajdhani", sans-serif;
 }
 
 *,
@@ -16,12 +17,19 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: sans-serif;
+
+  background-image: linear-gradient(to left, #e6e5e7, #bebcc2, #e6e5e7);
+}
 li {
   list-style-type: none;
   padding: 0 2rem;
 }
 .header {
-  background-color: black;
+  font-family: var(--ff-accent2);
+  background-image: linear-gradient(to left, #01209f, black);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,12 +48,18 @@ li {
   color: white;
   /* width: 100%; */
 }
-.title > h4 {
+.title > h2 {
+  font-size: 2rem;
   padding-top: 1rem;
 }
+.title > h1 {
+  font-size: 3rem;
+}
 .title > p {
+  font-family: var(--ff-primary);
+  font-size: 1.6rem;
   padding: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .header-img {
@@ -65,10 +79,15 @@ li {
 .rock,
 .paper,
 .scissors {
-  background-color: blue;
-  padding: 0 2rem;
+  /* background-color: blue; */
+  padding: 0 3rem;
+}
+.rps img {
+  border-radius: 50px;
 }
 .choices {
+  font-family: var(--ff-accent);
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,11 +99,15 @@ li {
   padding: 0 2rem;
 }
 .winner {
+  font-size: 1.5rem;
+
   text-align: center;
   grid-area: winner;
   padding: 1rem;
 }
 .score {
+  font-size: 1.5rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,6 +116,8 @@ li {
   padding: 1rem;
 }
 .victor {
+  font-size: 1.5rem;
+
   grid-area: victor;
   text-align: center;
 }
