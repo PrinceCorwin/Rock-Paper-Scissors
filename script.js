@@ -15,8 +15,9 @@ function game(userInput) {
   // reset victor id
   if (winner != "") {
     document.getElementById("victor").textContent =
-      "First to 5: Make Another Selection";
+      "First To 5 Wins: Click Icon To Make A Selection";
     document.getElementById("victor").style.fontSize = "1.5rem";
+    document.getElementById("victor").style.color = "black";
     document.getElementById("main-body").classList.remove("hidden");
   }
   let compInput = Math.floor(Math.random() * 3);
