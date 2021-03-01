@@ -1,4 +1,5 @@
 let winner = "";
+let loser = "";
 let pscore = 0;
 let cscore = 0;
 let listen = document.querySelectorAll(".btn");
@@ -11,10 +12,12 @@ for (let i = 0; i < listen.length; i++) {
 // SINGLE GAME FUNCTION
 
 function game(userInput) {
+  // reset victor id
   if (winner != "") {
     document.getElementById("victor").textContent =
       "First to 5: Make Another Selection";
     document.getElementById("victor").style.fontSize = "1.5rem";
+    document.getElementById("main-body").classList.remove("hidden");
   }
   let compInput = Math.floor(Math.random() * 3);
   switch (compInput) {
@@ -28,6 +31,10 @@ function game(userInput) {
       compInput = "scissors";
       break;
   }
+  document.getElementById("term-choice").textContent =
+    "Terminator Chooses: " + compInput.toUpperCase();
+  document.getElementById("player-choice").textContent =
+    "Resistance Chooses: " + userInput.toUpperCase();
   console.log("comp: " + compInput);
   if (compInput === userInput) {
     document.getElementById("winner").textContent = "TIE!";
@@ -51,17 +58,30 @@ function game(userInput) {
   }
   if (pscore >= 5 || cscore >= 5) {
     if (pscore > cscore) {
+      loser = "THE TERMINATORS";
       winner = "THE RESISTANCE";
+
       console.log(winner);
     } else {
-      winner = "THE TERMINATOR";
+      loser = "THE RESISTANCE";
+      winner = "TERMINATORS";
       console.log(winner);
     }
     pscore = 0;
     cscore = 0;
     const vic = document.getElementById("victor");
-    vic.textContent = winner + " IS VICTORIOUS!";
-    vic.style.fontSize = "4rem";
+    document.getElementById("main-body").classList.add("hidden");
+    vic.innerHTML = winner + ": VICTORIOUS " + "<br>" + loser + ": TERMINATED";
+    vic.style.fontSize = "3rem";
+    vic.style.color = "red";
+    const newNode = document.createElement("p");
+    const text = document.createTextNode(
+      "Make another selection to play again"
+    );
+    newNode.appendChild(text);
+    newNode.style.fontSize = "1.5rem";
+
+    vic.appendChild(newNode);
   }
 }
 function setScore() {
