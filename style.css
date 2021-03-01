@@ -1,7 +1,7 @@
 /* roots and customs */
 :root {
-  --clr-primary: ;
-  --clr-midtone: ;
+  --clr-primary: #01209f;
+  --clr-midtone: #9c31c7;
   --clr-darktone: ;
   --clr-contrast1: ;
   --clr-contrast2: ;
@@ -84,6 +84,14 @@ li {
 }
 .rps img {
   border-radius: 50px;
+  transition: 0.2s ease-in-out;
+}
+.rps img:hover {
+  transform: scale(1.2, 1.2);
+  box-shadow: 0px 0px 30px var(--clr-midtone);
+}
+.rps img:active {
+  box-shadow: 0px 0px 30px white;
 }
 .choices {
   font-family: var(--ff-accent);
@@ -96,11 +104,25 @@ li {
   grid-area: choices;
 }
 .choices > div {
-  padding: 0 2rem;
+  padding: 0 1rem;
+}
+#term-avatar {
+  border-radius: 50%;
+  margin-left: 3rem;
+  border: 2px solid white;
+  margin-right: 10px;
+}
+#sarah-avatar {
+  border-radius: 50%;
+  border: 2px solid black;
+  margin-right: 10px;
+}
+.choices > span {
+  color: var(--clr-primary);
 }
 .winner {
   font-size: 1.5rem;
-
+  color: red;
   text-align: center;
   grid-area: winner;
   padding: 1rem;
@@ -117,7 +139,7 @@ li {
 }
 .victor {
   font-size: 1.5rem;
-
+  color: purple;
   grid-area: victor;
   text-align: center;
 }

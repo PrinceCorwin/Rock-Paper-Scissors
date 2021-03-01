@@ -17,7 +17,7 @@ function game(userInput) {
     document.getElementById("victor").textContent =
       "First To 5 Wins: Click Icon To Make A Selection";
     document.getElementById("victor").style.fontSize = "1.5rem";
-    document.getElementById("victor").style.color = "black";
+    document.getElementById("victor").style.color = "purple";
     document.getElementById("main-body").classList.remove("hidden");
   }
   let compInput = Math.floor(Math.random() * 3);
@@ -32,10 +32,10 @@ function game(userInput) {
       compInput = "scissors";
       break;
   }
-  document.getElementById("term-choice").textContent =
-    "Terminator Chooses: " + compInput.toUpperCase();
-  document.getElementById("player-choice").textContent =
-    "Resistance Chooses: " + userInput.toUpperCase();
+  document.getElementById("term-choice").textContent = compInput.toUpperCase();
+  document.getElementById(
+    "player-choice"
+  ).textContent = userInput.toUpperCase();
   console.log("comp: " + compInput);
   if (compInput === userInput) {
     document.getElementById("winner").textContent = "TIE!";
@@ -59,13 +59,13 @@ function game(userInput) {
   }
   if (pscore >= 5 || cscore >= 5) {
     if (pscore > cscore) {
-      loser = "THE TERMINATORS";
-      winner = "THE RESISTANCE";
+      loser = "Terminators";
+      winner = "Resistance";
 
       console.log(winner);
     } else {
-      loser = "THE RESISTANCE";
-      winner = "TERMINATORS";
+      loser = "Resistance";
+      winner = "Terminators";
       console.log(winner);
     }
     pscore = 0;
