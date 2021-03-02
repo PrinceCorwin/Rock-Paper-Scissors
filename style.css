@@ -103,6 +103,11 @@ li {
   text-align: center;
   grid-area: choices;
 }
+.choice-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .choices > div {
   padding: 0 1rem;
 }
@@ -117,7 +122,8 @@ li {
   border: 2px solid black;
   margin-right: 10px;
 }
-.choices > span {
+.choice-mobile > span {
+  margin-right: 1rem;
   color: var(--clr-primary);
 }
 .winner {
@@ -163,4 +169,33 @@ li {
 .hidden {
   visibility: hidden;
   height: 0;
+}
+@media screen and (max-width: 800px) {
+  .header-img {
+    float: right;
+    margin: 0;
+    width: 100vw;
+  }
+  .rps img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  * {
+    font-size: 70%;
+  }
+  /* .choices, */
+  .score {
+    flex-direction: column;
+  }
+  #term-avatar,
+  #sarah-avatar {
+    margin: 0;
+  }
+  .choice-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .choice-mobile > span {
+    margin-right: 0;
+  }
 }
