@@ -171,17 +171,24 @@ li {
   height: 0;
 }
 @media screen and (max-width: 800px) {
+  .title > p {
+    font-size: 1rem;
+  }
+
   .header-img {
     float: right;
     margin: 0;
     width: 100vw;
   }
-  .rps img {
-    width: 100%;
-    border-radius: 10px;
+  .rock,
+  .paper,
+  .scissors {
+    /* background-color: blue; */
+    padding: 0 1rem;
   }
-  * {
-    font-size: 70%;
+  .rps img {
+    width: 75px;
+    border-radius: 10px;
   }
   /* .choices, */
   .score {
