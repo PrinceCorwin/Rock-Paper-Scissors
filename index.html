@@ -32,7 +32,7 @@
     />
     <meta
       property="og:image"
-      content="https://amalfimakesit.com/images/SocMedThumbnails/RPSpreview.png"
+      content="https://amalfimakesit.com/apps/rock-paper-scissors/images/RPSpreview.png"
     />
     <meta
       property="og:url"
@@ -60,72 +60,87 @@
     />
   </head>
   <body>
-    <!-- add nav bar here -->
+    <nav>
+      <div class="app-title">ROCK, PAPER, SCISSORS: JUDGEMENT DAY!</div>
+      <div id="rules-btn">RULES</div>
+      <div id="rules">
+        <div id="rules-title">
+          <div>How to Play</div>
+          <i class="far fa-times-circle"></i>
+        </div>
+        <div id="rules-desc">
+          <p>
+            After millenia of temporal bickering, Sarah and the Terminators have
+            agreed that this is going nowhere (nowhen?). A bargain has been
+            struck. The final outcome of their epic contest will rest upon that
+            most ancient and noble form of combat... <br />ROCK, PAPER,
+            SCISSORS! You have been chosen to represent humanity in this final
+            battle. Choose wisely... <br />Our fate is in your hands
+            (literally).
+          </p>
+        </div>
+      </div>
+    </nav>
     <main>
       <div class="container">
         <div class="header">
-          <div class="title">
-            <img
-              class="header-img"
-              src="./images/termvsSarah.jpg"
-              alt="terminator image"
-            />
-            <h2>ROCK, PAPER, SCISSORS:</h2>
-            <h1>JUDGEMENT DAY!</h1>
-            <p>
-              After millenia of temporal bickering, Sarah and the Terminators
-              have agreed that this is going nowhere (nowhen?). A bargain has
-              been struck. The final outcome of their epic contest will rest
-              upon that most ancient and noble form of combat... <br />ROCK,
-              PAPER, SCISSORS! You have been chosen to represent humanity in
-              this final battle. Choose wisely... <br />Our fate is in your
-              hands (literally).
-            </p>
+          <div class="game" id="game">
+            <div class="choices">
+              <div class="choice-mobile">
+                <img
+                  src="./images/sarah.png"
+                  alt=""
+                  width="60"
+                  id="sarah-avatar"
+                />
+                <div>Chooses:</div>
+                <div class="player-choice" id="player-choice"></div>
+              </div>
+              <div class="choice-mobile">
+                <img src="./images/t2.png" alt="" width="60" id="term-avatar" />
+                <div>Chooses:</div>
+                <div class="term-choice" id="term-choice"></div>
+              </div>
+            </div>
+            <div class="winner" id="winner"></div>
+            <div class="score-row" id="score-row">
+              <div>SCORE</div>
+              <div class="score">
+                <div>Resistance:</div>
+                <div id="pscore">0</div>
+              </div>
+              <div class="score">
+                <div>Terminator:</div>
+                <span id="cscore">0</span>
+              </div>
+            </div>
           </div>
+          <img
+            class="header-img"
+            src="./images/termvsSarah.jpg"
+            alt="terminator image"
+          />
         </div>
 
         <div class="rps">
-          <div id="rock" class="rock btn">
-            <img src="./images/rock.png" alt="rock" />
-          </div>
-          <div id="paper" class="paper btn">
-            <img src="./images/paper.png" alt="paper" />
-          </div>
-          <div id="scissors" class="scissors btn">
-            <img src="./images/scissors.png" alt="scissors" />
-          </div>
-        </div>
-        <div class="main-body" id="main-body">
-          <div class="choices">
-            <div class="choice-mobile">
-              <img
-                src="./images/sarah.png"
-                alt=""
-                width="60"
-                id="sarah-avatar"
-              />
-              <span>Chooses: </span>
-              <div class="player-choice" id="player-choice">
-                <em>click icon</em>
-              </div>
+          <div id="rps">
+            <div id="rock" class="rock btn">
+              <img src="./images/rock.png" alt="rock" />
             </div>
-            <div class="choice-mobile">
-              <img src="./images/t2.png" alt="" width="60" id="term-avatar" />
-              <span>Chooses: </span>
-              <div class="term-choice" id="term-choice">
-                <em>click icon</em>
-              </div>
+            <div id="paper" class="paper btn">
+              <img src="./images/paper.png" alt="paper" />
+            </div>
+            <div id="scissors" class="scissors btn">
+              <img src="./images/scissors.png" alt="scissors" />
             </div>
           </div>
-          <div class="winner" id="winner"></div>
-          <ul class="score" id="score">
-            <li>SCORE</li>
-            <li id="pscore">Resistance: 0</li>
-            <li id="cscore">Terminator: 0</li>
-          </ul>
+          <div class="inst" id="inst">
+            First To 5 Wins: Click Icon To Make A Selection
+          </div>
         </div>
-        <div class="victor" id="victor">
-          First To 5 Wins: Click Icon To Make A Selection
+        <div class="victor">
+          <div id="victor"></div>
+          <div id="playAgainBtn">PLAY AGAIN</div>
         </div>
       </div>
     </main>
@@ -166,7 +181,7 @@
         /></a>
       </div>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

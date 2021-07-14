@@ -1,25 +1,47 @@
-let winner = "";
-let loser = "";
-let pscore = 0;
-let cscore = 0;
+// event listeners for rules visibility
+$("#rules-btn").click(function () {
+  $("#rules").toggle();
+});
+$(".fa-times-circle").click(function () {
+  $("#rules").toggle();
+});
+
+let pscore = Number(document.getElementById("pscore").textContent);
+let cscore = Number(document.getElementById("cscore").textContent);
+const vic = document.querySelector(".victor");
+const vicDiv = document.getElementById("victor");
+const rps = document.querySelector(".rps");
+
+// listener for play again button
+// document.getElementById("playAgainBtn").addEventListener("click", displayDate);
+document.getElementById("playAgainBtn").addEventListener("click", playAgain);
+function playAgain() {
+  console.log("here");
+  vic.style.display = "none";
+  rps.style.display = "block";
+  setScore("0", "0");
+  document.getElementById("winner").textContent = "";
+}
+
+const winCombo = {
+  rock: "Rock CRUSHES Scissors!",
+  paper: "Paper COVERS Rock!",
+  scissors: "Scissors CUTS Paper!",
+};
+// let winner = "";
+// let loser = "";
+// let pscore = 0;
+// let cscore = 0;
 let listen = document.querySelectorAll(".btn");
 for (let i = 0; i < listen.length; i++) {
   listen[i].addEventListener("click", function () {
-    console.log(this.id);
+    // console.log(this.id);
     game(this.id);
   });
 }
 // SINGLE GAME FUNCTION
 
 function game(userInput) {
-  // reset victor id
-  if (winner != "") {
-    document.getElementById("victor").textContent =
-      "First To 5 Wins: Click Icon To Make A Selection";
-    document.getElementById("victor").style.fontSize = "1.5rem";
-    document.getElementById("victor").style.color = "purple";
-    document.getElementById("main-body").classList.remove("hidden");
-  }
   let compInput = Math.floor(Math.random() * 3);
   switch (compInput) {
     case 0:
@@ -33,14 +55,19 @@ function game(userInput) {
       break;
   }
   document.getElementById("term-choice").textContent = compInput.toUpperCase();
-  document.getElementById(
-    "player-choice"
-  ).textContent = userInput.toUpperCase();
-  console.log("comp: " + compInput);
+  document.getElementById("player-choice").textContent =
+    userInput.toUpperCase();
+
+  // determine winner of the hand
+
+  // let winner = "";
+  // let loser = "";
+  let pscore = Number(document.getElementById("pscore").textContent);
+  let cscore = Number(document.getElementById("cscore").textContent);
+  console.log(pscore, cscore);
   if (compInput === userInput) {
     document.getElementById("winner").textContent = "TIE!";
-    setScore(pscore, cscore);
-    console.log("Tie");
+    // setScore(pscore, cscore);
   } else if (
     (compInput === "rock" && userInput === "scissors") ||
     (compInput === "scissors" && userInput === "paper") ||
@@ -48,13 +75,15 @@ function game(userInput) {
   ) {
     cscore++;
     setScore(pscore, cscore);
-    document.getElementById("winner").textContent = "THE TERMINATOR WON";
+    document.getElementById("winner").textContent =
+      "TERMINATOR WINS: " + winCombo[compInput];
 
     console.log("Computer Wins" + cscore + pscore);
   } else {
     pscore++;
     setScore(pscore, cscore);
-    document.getElementById("winner").textContent = "THE RESISTANCE WON";
+    document.getElementById("winner").textContent =
+      "RESISTANCE WINS: " + winCombo[userInput];
     console.log("Player Wins" + pscore + cscore);
   }
   if (pscore >= 5 || cscore >= 5) {
@@ -68,25 +97,20 @@ function game(userInput) {
       winner = "Terminators";
       console.log(winner);
     }
-    pscore = 0;
-    cscore = 0;
-    const vic = document.getElementById("victor");
-    document.getElementById("main-body").classList.add("hidden");
-    vic.innerHTML = winner + ": VICTORIOUS " + "<br>" + loser + ": TERMINATED";
-    vic.style.fontSize = "3rem";
-    vic.style.color = "red";
-    const newNode = document.createElement("p");
-    const text = document.createTextNode(
-      "Make another selection to play again"
-    );
-    newNode.appendChild(text);
-    newNode.style.fontSize = "1.5rem";
 
-    vic.appendChild(newNode);
+    rps.style.display = "none";
+    // const rps = document.querySelectorAll(".btn");
+    // rps.forEach(hideBtns);
+    // function hideBtns(item) {
+    //   item.style.display = "none";
+    // }
+    vic.style.display = "flex";
+    vicDiv.innerHTML =
+      winner + ": VICTORIOUS! " + "<br>" + loser + ": TERMINATED!";
   }
 }
-function setScore() {
-  document.getElementById("pscore").textContent = "Resistance: " + pscore;
-  document.getElementById("cscore").textContent = "Terminator: " + cscore;
+function setScore(pscore, cscore) {
+  document.getElementById("pscore").textContent = pscore.toString();
+  document.getElementById("cscore").textContent = cscore.toString();
   return;
 }
