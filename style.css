@@ -21,16 +21,20 @@
   outline: 1px solid red;
 }
 body {
+  /* border: 2px solid green; */
+  /* width: 100vw; */
   color: var(--clr-contrast1);
-  font-family: sans-serif;
+  font-family: var(--ff-accent2);
   /* background-image: url("images/Fortnite-Sarah-Connor-T-800-Terminator-1024x616.jpg"); */
   /* background-size: cover; */
   background-image: linear-gradient(to left, #e6e5e7, #bebcc2, #e6e5e7);
 }
 .container {
+  /* border: 2px solid yellow; */
   display: flex;
   /* align-items: center; */
   flex-direction: column;
+  /* width: 100vw; */
 }
 nav {
   /* position: relative; */
@@ -46,13 +50,15 @@ nav {
 }
 #rules-btn {
   color: var(--clr-contrast1);
+  text-align: center;
+  /* padding:0; */
   /* background-color: black; */
   /* position: absolute; */
   z-index: 500;
   /* top: 400px; */
   /* right: 0px; */
   cursor: pointer;
-  /* font-family: var(--ff-primary); */
+  /* font-family: var(--ff-accent); */
   /* font-weight: 900; */
   font-size: 1.5rem;
 }
@@ -84,11 +90,13 @@ main {
   min-height: 100vh;
 }
 .header {
+  /* width: 100vw; */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  font-family: var(--ff-accent2);
+  /* font-family: var(--ff-accent2); */
   background-image: linear-gradient(to left, #01209f, black);
+  /* padding-right: 1rem; */
 }
 .game {
   align-self: center;
@@ -105,8 +113,10 @@ main {
 
 .header-img {
   /* float: right; */
-  margin-left: 1rem;
-  /* width: 500px; */
+  /* margin-left: 1rem; */
+  /* max-height: 100%; */
+  width: 500px;
+  /* object-fit: contain; */
 }
 
 .choices {
@@ -116,7 +126,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 
   padding: 0 1rem 1rem 1rem;
   text-align: center;
@@ -172,6 +182,7 @@ main {
   font-size: 1.5rem;
   color: purple;
   text-align: center;
+  /* border: 2px solid blue; */
 }
 .victor {
   flex-direction: column;
@@ -181,7 +192,7 @@ main {
   color: red;
   font-size: 3rem;
   align-self: center;
-  margin-top: 3rem;
+  padding: 3rem 0 1rem 0;
   display: none;
 }
 #playAgainBtn {
@@ -212,6 +223,7 @@ main {
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
+  /* border: 2px solid red; */
 }
 .rock,
 .paper,
@@ -228,6 +240,7 @@ main {
   box-shadow: 0px 0px 30px var(--clr-midtone);
 }
 #rps img:active {
+  transform: scale(0.8);
   box-shadow: 0px 0px 30px white;
 }
 /* footer start */
@@ -277,11 +290,17 @@ footer img:hover {
 /* footer end */
 
 @media screen and (max-width: 800px) {
-  .header-img {
-    float: right;
-    margin: 0;
-    width: 100vw;
+  .header {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    /* width: 100vw; */
   }
+  .header-img {
+    /* margin: 0 0 15px 0; */
+    /* width: 100%; */
+  }
+
   .rock,
   .paper,
   .scissors {
@@ -292,9 +311,12 @@ footer img:hover {
     width: 75px;
     border-radius: 10px;
   }
-  /* .choices, */
+  .choices {
+    padding-top: 15px;
+  }
   .score-row {
     flex-direction: column;
+    justify-content: space-between;
   }
   #term-avatar,
   #sarah-avatar {
@@ -304,16 +326,49 @@ footer img:hover {
     display: flex;
     flex-direction: column;
   }
-  .choice-mobile > span {
+  /* .choice-mobile > span {
     margin-right: 0;
-  }
-}
-@media screen and (max-width: 600px) {
+  } */
+
   footer {
     flex-direction: column;
     align-items: center;
   }
   .footer-contact {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-img {
+    /* margin: 0; */
+    /* width: 280px; */
+    display: none;
+  }
+  .score-row {
+    /* width: 100%; */
+    /* height: 200px; */
+    /* padding-top: 15px; */
+    background-image: url("images/termvsSarah.jpg");
+    background-size: cover;
+  }
+  .score-row > div {
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
+      -1px 1px 0 black, 0px 1px 0 black, 1px 0px 0 black, 0px -1px 0 black,
+      -1px 0px 0 black;
+  }
+  .winner {
+    font-size: 1rem;
+  }
+  #rps {
+    justify-content: space-around;
+  }
+  .rock,
+  .paper,
+  .scissors {
+    /* background-color: blue; */
+    padding: 0;
   }
 }

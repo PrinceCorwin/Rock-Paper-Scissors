@@ -24,9 +24,9 @@ function playAgain() {
 }
 
 const winCombo = {
-  rock: "Rock CRUSHES Scissors!",
-  paper: "Paper COVERS Rock!",
-  scissors: "Scissors CUTS Paper!",
+  rock: "<span>Rock CRUSHES Scissors!</span>",
+  paper: "<span>Paper COVERS Rock!</span>",
+  scissors: "<span>Scissors CUTS Paper!</span>",
 };
 // let winner = "";
 // let loser = "";
@@ -75,14 +75,14 @@ function game(userInput) {
   ) {
     cscore++;
     setScore(pscore, cscore);
-    document.getElementById("winner").textContent =
+    document.getElementById("winner").innerHTML =
       "TERMINATOR WINS: " + winCombo[compInput];
 
     console.log("Computer Wins" + cscore + pscore);
   } else {
     pscore++;
     setScore(pscore, cscore);
-    document.getElementById("winner").textContent =
+    document.getElementById("winner").innerHTML =
       "RESISTANCE WINS: " + winCombo[userInput];
     console.log("Player Wins" + pscore + cscore);
   }
