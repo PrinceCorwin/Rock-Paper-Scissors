@@ -17,9 +17,9 @@
   margin: 0;
   padding: 0;
 }
-*:hover {
+/* *:hover {
   outline: 1px solid red;
-}
+} */
 body {
   /* border: 2px solid green; */
   /* width: 100vw; */
@@ -296,10 +296,10 @@ footer img:hover {
     align-items: center;
     /* width: 100vw; */
   }
-  .header-img {
-    /* margin: 0 0 15px 0; */
-    /* width: 100%; */
-  }
+  /* .header-img {
+    margin: 0 0 15px 0;
+    width: 100%;
+  } */
 
   .rock,
   .paper,
